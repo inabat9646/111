@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рандомная кодировка</title>
+    <script>
+        // Список возможных кодировок
+        const encodings = ['UTF-8', 'Windows-1251', 'ISO-8859-1', 'Shift_JIS', 'GB2312'];
+
+        // Выбираем случайную кодировку
+        function randomizeEncoding() {
+            const randomEncoding = encodings[Math.floor(Math.random() * encodings.length)];
+            document.querySelector('meta[charset]').setAttribute('charset', randomEncoding);
+            console.log('Выбрана кодировка:', randomEncoding);
+        }
+
+        // Изменяем кодировку при загрузке страницы
+        window.onload = randomizeEncoding;
+    </script>
+</head>
+<body>
+    <h1>Привет, мир!</h1>
+    <p>Это страница с случайной кодировкой!</p>
+</body>
+</html>
